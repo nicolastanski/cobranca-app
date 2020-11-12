@@ -4,12 +4,10 @@ import { Form } from '@unform/web';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Input from '../../components/Input';
@@ -34,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SignIn = () => {
+const ForgotPassword = () => {
   const formRef = useRef(null);
   const classes = useStyles();
 
@@ -80,19 +78,6 @@ const SignIn = () => {
 
       <Form ref={formRef} onSubmit={handleSubmit} className={classes.form}>
         <Input name="email" id="email" label="E-mail" autoFocus />
-
-        <Input
-          name="password"
-          id="password"
-          label="Senha"
-          type="password"
-          autoComplete="current-password"
-        />
-
-        <FormControlLabel
-          control={<Checkbox value="remember" color="primary" />}
-          label="Lembrar"
-        />
         <Button
           type="submit"
           fullWidth
@@ -100,18 +85,18 @@ const SignIn = () => {
           color="primary"
           className={classes.submit}
         >
-          Entrar
+          Enviar
         </Button>
-        <Grid container>
-          <Grid item xs>
-            <Link href="/forgot-password" variant="body2">
-              Esqueceu a senha?
-            </Link>
-          </Grid>
-        </Grid>
       </Form>
+      <Grid container>
+        <Grid item xs>
+          <Link href="/" variant="body2">
+            Voltar
+          </Link>
+        </Grid>
+      </Grid>
     </>
   );
 };
 
-export default SignIn;
+export default ForgotPassword;
